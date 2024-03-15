@@ -1,0 +1,15 @@
+# Extend from the Bitnami Spark base image
+FROM bitnami/spark:latest
+
+# Install zip
+USER 0
+RUN apt-get update && \
+    apt-get install -y zip && \
+    rm -rf /var/lib/apt/lists/* && \
+    zip -r /opt/spark-apps/MarketBasketAnalysis/src.zip /opt/spark-apps/MarketBasketAnalysis/src
+
+# Switch back to the default non-root user
+USER 1001
+
+# The command to start Spark Master is inherited from the base image,
+# so we don't need to repeat it here unless you want to modify it.

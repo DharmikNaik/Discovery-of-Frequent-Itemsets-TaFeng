@@ -19,6 +19,8 @@ It relies on the idea of monotonicity of itemsets: If a set I of items is freque
 
 The pattern of moving from itemsets of size k to the next is suggested in below figure:
 
+![Apriori Pattern](https://github.com/DharmikNaik/Discovery-of-Frequent-Itemsets-TaFeng/blob/master/images/apriori-pattern.png)
+
 The pattern involves generating the candidate set C<sub>k+1</sub> from the set L<sub>k</sub> using the idea of monotonicity and then pruning/filtering items from C<sub>k+1</sub> based on support threshold to generate the L<sub>k+1</sub> set. 
 
 ## Future directions
